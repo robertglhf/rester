@@ -6,29 +6,37 @@ $(document).ready(function(){
 
     //ajax tabs
     $("#container li a").click(function() {
- 
-        $("#ajax-content").empty().append("<div id='loading'>Loading...</div>");
-        $("#nav li a").removeClass('current');
+
+        $("#ajax-content").empty().append("");
+        $("#container li a").removeClass('current');
         $(this).addClass('current');
- 
-        $.ajax({ url: this.href, success: function(html) {
+
+        $.ajax({ url: this.href , success: function(html) {
             $("#ajax-content").empty().append(html);
+            console.log(html);
             }
         });
     return false;
     });
 
-    $("#ajax-content").empty().append("<div id='loading'><img src='images/loading.gif' alt='Loading' /></div>");
-    $.ajax({ url: 'page_1.html', success: function(html) {
+    // <div id='loading'>Loading...</div>
+
+    // $("#ajax-content").empty().append("<div id='loading'><img src='images/loading.gif' alt='Loading' /></div>");
+    $.ajax({ url: 'fish.html', success: function(html) {
         $("#ajax-content").empty().append(html);
         }
     });
 
     //tabs selected
-
-    // $('li').click(function(){
-    //     $(this).addClass('selected-item').siblings().removeClass('selected-item');
+    //
+    // $('a').click(function(){
+    //     $('a').parent().addClass('selected-item').siblings().removeClass('selected-item');
     // });
+
+    $('a').click(function(){
+      $('ul li').removeClass('selected-item');
+      $('this').addClass('selected-item');
+    })
 
     if ($('.offers ul li').is('.selected-item') || $('.offers ul li').hasClass('.selected-item')) {
         $('.showcase--fish').css({
@@ -66,8 +74,4 @@ $(window).scroll(function () {
     })
 
 });
-
-
-
-
 

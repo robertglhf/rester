@@ -50,6 +50,13 @@
   font-family: Abril Fatface;
   font-weight: normal;
   font-size: 42px;
+  text-align: center;
+  -webkit-margin-after: -.5em; }
+
+.offers h4 {
+  font-family: Open Sans;
+  font-size: 16px;
+  font-weight: normal;
   text-align: center; }
 
 .offers ul {
@@ -61,10 +68,16 @@
     color: black;
     display: inline-block;
     font-family: Open Sans;
-    font-size: 18;
-    font-weight: normal; }
+    font-size: 18px;
+    font-weight: normal;
+    transition: all 0.1s ease; }
+    .offers ul li a {
+      color: black;
+      text-decoration: none; }
+      .offers ul li a:visited {
+        color: black; }
     .offers ul li:hover {
-      font-weight: bold; }
+      font-weight: normal; }
     @media screen and (max-width: 600px) {
       .offers ul li {
         display: block;
@@ -111,6 +124,21 @@
     .offers .show-more a:hover {
       border-bottom: 2px solid #c19663;
       color: #404040; }
+
+#ajax-content {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-flow: wrap;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap; }
+  #ajax-content img {
+    padding: 3px;
+    border: 1px solid black;
+    margin: 7px; }
 
 @media screen and (max-width: 500px) {
   .desktop--nav {
